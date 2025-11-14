@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMantra - Your Premium Mental Health Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 class="app-title">MindMantra</h2>
+            <p class="app-tagline">Your Premium Mental Health Companion</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="#cbt-tools" class="nav-link" data-section="cbt-tools"><i class="fas fa-brain"></i>CBT Tools</a></li>
+            <li><a href="#ai-companion" class="nav-link" data-section="ai-companion"><i class="fas fa-robot"></i>AI Companion</a></li>
+            <li><a href="#meditation" class="nav-link" data-section="meditation"><i class="fas fa-leaf"></i>Meditation</a></li>
+            <li><a href="#mental-fitness" class="nav-link" data-section="mental-fitness"><i class="fas fa-dumbbell"></i>Mental Fitness</a></li>
+            <li><a href="#mood-tracking" class="nav-link" data-section="mood-tracking"><i class="fas fa-chart-line"></i>Mood Tracking</a></li>
+            <li><a href="#gamification" class="nav-link" data-section="gamification"><i class="fas fa-trophy"></i>Gamification</a></li>
+            <li><a href="#resources" class="nav-link" data-section="resources"><i class="fas fa-book"></i>Resources</a></li>
+			<li><a href="#vr-ar-therapy" class="nav-link" data-section="vr-ar-therapy"><i class="fas fa-vr-cardboard"></i>Immersive VR/AR Therapy</a></li>
+            <li><a href="#mood-music" class="nav-link" data-section="mood-music"><i class="fas fa-music"></i>Music by Mood</a></li>
+			<li><a href="#mood-posts" class="nav-link" data-section="mood-posts"><i class="fas fa-comment-dots"></i>Mood Posts</a></li>
+			<li><a href="#face-detect" class="nav-link" data-section="face-detect"><i class="fas fa-face-smile"></i>Face Mood Detect</a></li>
+			<li><a href="#yoga-detect" class="nav-link" data-section="yoga-detect"><i class="fas fa-camera"></i>Yoga & Exercise Detect</a></li>
+			<li><a href="#local-events" class="nav-link" data-section="local-events"><i class="fas fa-calendar-alt"></i>Local Events</a></li>
+			<li><a href="#login-certification" class="nav-link" data-section="login-certification"><i class="fas fa-user"></i>Login & Certification</a></li>
+        </ul>
+        <div class="crisis-support">
+            <h4>🚨 Crisis Support</h4>
+            <p><strong>988</strong> - Suicide Prevention</p>
+            <p><strong>Text HOME to 741741</strong> - Crisis Text Line</p>
+            <p><strong>911</strong> - Emergency Services</p>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Daily Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="section-header">
+                <h1 class="glow-text">✨ Daily Dashboard</h1>
+                <p>Welcome back! Let's make today a great day for your mental health journey.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Mood Check-in Widget -->
+                <div class="card mood-checkin">
+                    <div class="card__header">
+                        <h3>🎭 How are you feeling today?</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="mood-selector">
+                            <button class="mood-btn" data-mood="great" title="Great">😄</button>
+                            <button class="mood-btn" data-mood="good" title="Good">😊</button>
+                            <button class="mood-btn" data-mood="neutral" title="Neutral">😐</button>
+                            <button class="mood-btn" data-mood="down" title="Down">😔</button>
+                            <button class="mood-btn" data-mood="stressed" title="Stressed">😰</button>
+                        </div>
+                        <p id="mood-feedback" class="mood-feedback"></p>
+                    </div>
+                </div>
+
+                <!-- Daily Quote -->
+                <div class="card daily-quote">
+                    <div class="card__header">
+                        <h3>💫 Daily Affirmation</h3>
+                    </div>
+                    <div class="card__body">
+                        <blockquote id="daily-quote">
+                            "You are stronger than you think, braver than you feel, and more loved than you know."
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="card quick-stats">
+                    <div class="card__header">
+                        <h3>📊 Your Progress</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <span class="stat-number" id="current-streak">7</span>
+                                <span class="stat-label">Day Streak</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="total-xp">2,350</span>
+                                <span class="stat-label">Total XP</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="user-level">12</span>
+                                <span class="stat-label">Level</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win the Day Section -->
+                <div class="card win-the-day">
+                    <div class="card__header">
+                        <h3>🎯 Win the Day</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="quest-item">
+                            <h4>Today's Quest: Mindful Morning</h4>
+                            <p>Start your day with 5 minutes of meditation</p>
+                            <div class="quest-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>6/10 XP</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary btn--sm complete-quest">Complete Quest</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CBT Tools Section -->
+        <section id="cbt-tools" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">🧠 CBT Tools</h1>
+                <p>Advanced Cognitive Behavioral Therapy tools to help you understand and manage your thoughts with AI insights.</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="card tool-card">
+                    <div class="card__body">
+                        <i class="fas fa-edit tool-icon"></i>
+                        <h3>📝 Thought Diary</h3>
+                        <p>Advanced 9-step CBT process with AI insights to work through challenging thoughts</p>
+                        <button class="btn btn--primary open-thought-diary">Start Thought Diary</button>
+                    </div>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="card__body">
+                        <i class="fas fa-cards-blank tool-icon"></i>
+                        <h3>🎯 Coping Cards</h3>
+                        <p>Interactive coping strategy cards with personalization for different situations</p>
+                        <button class="btn btn--primary open-coping-cards">Create Coping Card</button>
+                    </div>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="card__body">
+                        <i class="fas fa-chart-line tool-icon"></i>
+                        <h3>📊 Mood Tracker Pro</h3>
+                        <p>Advanced mood tracking with patterns, insights, and AI-powered recommendations</p>
+                        <button class="btn btn--primary open-mood-tracker">Track Mood</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Companion Section -->
+        <section id="ai-companion" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">🤖 AI Companion Chat</h1>
+                <p>Chat with ChatMind AI, your premium 24/7 mental health companion powered by advanced AI</p>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            <p>✨ Hi there! I'm ChatMind, your AI companion. I'm here to listen and support you with advanced insights. How are you feeling today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conversation-starters">
+                    <h4>💭 Quick conversation starters:</h4>
+                    <div class="starter-buttons">
+                        <button class="btn btn--outline starter-btn">😰 I'm feeling anxious</button>
+                        <button class="btn btn--outline starter-btn">😴 I can't sleep</button>
+                        <button class="btn btn--outline starter-btn">😵‍💫 I'm feeling overwhelmed</button>
+                        <button class="btn btn--outline starter-btn">💪 I need motivation</button>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" class="form-control" placeholder="Type your message here..." />
+                        <button class="btn btn--primary" id="send-message">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meditation Section -->
+        <section id="meditation" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">🧘 Meditation & Mindfulness</h1>
+                <p>Find peace and clarity with premium guided meditations and mindfulness exercises</p>
+            </div>
+
+            <div class="meditation-categories">
+                <div class="card meditation-category">
+                    <div class="card__header">
+                        <h3>🌱 Beginner Meditations</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="meditation-list">
+                            <div class="meditation-item">
+                                <span>3-minute breathing space</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="3">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>5-minute body scan</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="5">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>10-minute mindfulness intro</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="10">Play</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card meditation-category">
+                    <div class="card__header">
+                        <h3>😴 Sleep & Relaxation</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="meditation-list">
+                            <div class="meditation-item">
+                                <span>Progressive relaxation</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="15">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>Sleep stories</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="20">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>Nature sounds</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="30">Play</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card meditation-category">
+                    <div class="card__header">
+                        <h3>😌 Stress Relief</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="meditation-list">
+                            <div class="meditation-item">
+                                <span>Quick calm (3 min)</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="3">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>Anxiety relief session</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="10">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>Advanced breathing techniques</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="5">Play</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card meditation-category">
+                    <div class="card__header">
+                        <h3>🎯 Advanced Practice</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="meditation-list">
+                            <div class="meditation-item">
+                                <span>30-minute deep meditation</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="30">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>Loving-kindness meditation</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="15">Play</button>
+                            </div>
+                            <div class="meditation-item">
+                                <span>Concentration training</span>
+                                <button class="btn btn--sm btn--primary play-meditation" data-duration="20">Play</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meditation Timer -->
+            <div class="card meditation-timer">
+                <div class="card__header">
+                    <h3>⏰ Meditation Timer</h3>
+                </div>
+                <div class="card__body">
+                    <div class="timer-controls">
+                        <input type="range" id="timer-duration" min="1" max="60" value="5" class="timer-slider">
+                        <div class="timer-display">
+                            <span id="timer-minutes">5</span> minutes
+                        </div>
+                        <button class="btn btn--primary" id="start-timer">Start Timer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mental Fitness Section -->
+        <section id="mental-fitness" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">💪 Mental Fitness Training</h1>
+                <p>Build mental resilience with our 5 core skill areas and advanced training techniques</p>
+            </div>
+
+            <div class="fitness-skills">
+                <div class="card skill-card">
+                    <div class="card__body">
+                        <h3>🧘 Live Mindfully</h3>
+                        <p>Advanced skills to help be present and pay attention with premium techniques</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <span>75% Complete</span>
+                        </div>
+                        <button class="btn btn--primary practice-skill" data-skill="mindfully">Practice</button>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="card__body">
+                        <h3>🤔 Flexible Thinking</h3>
+                        <p>Enhanced skills for problem-solving, creativity, and cognitive flexibility</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span>60% Complete</span>
+                        </div>
+                        <button class="btn btn--primary practice-skill" data-skill="thinking">Practice</button>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="card__body">
+                        <h3>🤝 Grow Connections</h3>
+                        <p>Premium relationship-building skills and social wellness techniques</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <span>45% Complete</span>
+                        </div>
+                        <button class="btn btn--primary practice-skill" data-skill="connections">Practice</button>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="card__body">
+                        <h3>🎯 Act Purposefully</h3>
+                        <p>Advanced skills for understanding strengths, values, and life purpose</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                            <span>80% Complete</span>
+                        </div>
+                        <button class="btn btn--primary practice-skill" data-skill="purpose">Practice</button>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="card__body">
+                        <h3>💪 Recharge Body</h3>
+                        <p>Premium skills for physical and mental restoration with holistic techniques</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 55%"></div>
+                            </div>
+                            <span>55% Complete</span>
+                        </div>
+                        <button class="btn btn--primary practice-skill" data-skill="recharge">Practice</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Tracking Section -->
+        <section id="mood-tracking" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">📊 Mood & Progress Tracking</h1>
+                <p>Visualize your mental health journey with detailed analytics and AI-powered insights</p>
+            </div>
+
+            <div class="tracking-dashboard">
+                <div class="card mood-calendar-card">
+                    <div class="card__header">
+                        <h3>📅 Mood Calendar</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="mood-calendar" id="mood-calendar">
+                            <!-- Calendar will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card analytics-card">
+                    <div class="card__header">
+                        <h3>📊 Weekly Analytics</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="analytics-summary">
+                            <div class="metric">
+                                <span class="metric-label">Average Mood Score</span>
+                                <span class="metric-value">8.2/10</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Best Day</span>
+                                <span class="metric-value">Monday</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Weekly Improvement</span>
+                                <span class="metric-value">+15%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Sessions Completed</span>
+                                <span class="metric-value">45</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--outline">View Detailed Report</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gamification Section -->
+        <section id="gamification" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">🎮 Gamification Hub</h1>
+                <p>Level up your mental health journey with premium quests, achievements, and power-ups</p>
+            </div>
+
+            <div class="gamification-grid">
+                <div class="card hero-profile">
+                    <div class="card__header">
+                        <h3>🦸 Hero Profile</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="hero-stats">
+                            <div class="avatar">🦸‍♀️</div>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-label">Level</span>
+                                    <span class="stat-value" id="hero-level">12</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">XP</span>
+                                    <span class="stat-value" id="hero-xp">2,350</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Streak</span>
+                                    <span class="stat-value" id="hero-streak">7 days</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Achievements</span>
+                                    <span class="stat-value">18</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card active-quests">
+                    <div class="card__header">
+                        <h3>⚔️ Active Quests</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="quest-list">
+                            <div class="quest-item">
+                                <h4>✨ Gratitude Practice</h4>
+                                <p>Write down 3 things you're grateful for today</p>
+                                <div class="quest-reward">+15 XP</div>
+                            </div>
+                            <div class="quest-item">
+                                <h4>🤝 Social Connection</h4>
+                                <p>Reach out to a friend or family member</p>
+                                <div class="quest-reward">+20 XP</div>
+                            </div>
+                            <div class="quest-item">
+                                <h4>🧘 Mindful Moment</h4>
+                                <p>Complete a 5-minute mindfulness session</p>
+                                <div class="quest-reward">+25 XP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card power-ups">
+                    <div class="card__header">
+                        <h3>⚡ Power-ups</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="powerup-grid">
+                            <button class="powerup-btn" data-powerup="breathing">
+                                <span class="powerup-icon">🫁</span>
+                                <span class="powerup-name">Deep Breathing</span>
+                            </button>
+                            <button class="powerup-btn" data-powerup="gratitude">
+                                <span class="powerup-icon">🙏</span>
+                                <span class="powerup-name">Gratitude Moment</span>
+                            </button>
+                            <button class="powerup-btn" data-powerup="stretch">
+                                <span class="powerup-icon">🤸</span>
+                                <span class="powerup-name">Stretch Break</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="yoga-detect" class="content-section">
+  <div class="section-header">
+    <h1 class="glow-text">📷 Yoga & Exercise Detection</h1>
+    <p>Use your device camera to detect and track yoga poses and exercises for real-time feedback.</p>
+  </div>
+  <div class="yoga-detect-grid">
+    <!-- Camera and detection logic starts here -->
+    <div class="card">
+      <div class="card__header"><h3>🎥 Start Workout Detection</h3></div>
+      <div class="card__body">
+        <video id="camera-view" width="100%" autoplay muted playsinline></video>
+        <button class="btn btn--primary" id="start-exercise">Start Detection</button>
+        <div id="detected-pose" class="pose-feedback"></div>
+        <div id="exercise-record" class="exercise-log"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__header"><h3>📓 Exercise History</h3></div>
+      <div class="card__body">
+        <ul id="history-list"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Resources Section -->
+        <section id="resources" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">📚 Resources & Learning</h1>
+                <p>Expand your mental health knowledge with premium educational content and advanced tools</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="card resource-card">
+                    <div class="card__body">
+                        <i class="fas fa-graduation-cap resource-icon"></i>
+                        <h3>🎓 Psychology Education</h3>
+                        <p>Learn about mental health conditions, treatments, and premium wellness strategies</p>
+                        <button class="btn btn--outline">Explore Modules</button>
+                    </div>
+                </div>
+
+                <div class="card resource-card">
+                    <div class="card__body">
+                        <i class="fas fa-clipboard-list resource-icon"></i>
+                        <h3>📋 Mental Health Assessments</h3>
+                        <p>Advanced self-assessment tools to understand your mental health better</p>
+                        <button class="btn btn--outline">Take Assessment</button>
+                    </div>
+                </div>
+
+                <div class="card resource-card">
+                    <div class="card__body">
+                        <i class="fas fa-phone-volume resource-icon"></i>
+                        <h3>📞 Crisis Resources</h3>
+                        <p>Immediate professional support when you need it most</p>
+                        <button class="btn btn--outline">Get Help Now</button>
+                    </div>
+                </div>
+
+                <div class="card resource-card">
+                    <div class="card__body">
+                        <i class="fas fa-lightbulb resource-icon"></i>
+                        <h3>💡 Premium Tips & Techniques</h3>
+                        <p>Advanced strategies for managing stress, anxiety, and improving wellbeing</p>
+                        <button class="btn btn--outline">Browse Tips</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="mood-posts" class="content-section">
+  <div class="section-header">
+    <h1 class="glow-text">💬 Mood Based Posts</h1>
+    <p>Share how you're feeling and connect with others experiencing similar moods.</p>
+  </div>
+  <div class="post-creator">
+    <textarea id="post-text" class="form-control" placeholder="Share your thoughts or mood here..." rows="4"></textarea>
+    <button class="btn btn--primary" id="post-btn">Post</button>
+  </div>
+  <div id="posts-feed" class="posts-feed" style="margin-top:20px; max-height:300px; overflow-y:auto; border:1px solid #ccc; padding:10px; border-radius:5px;">
+    <!-- Mood posts will appear here -->
+  </div>
+</section>
+
+<script>
+  const postBtn = document.getElementById('post-btn');
+  const postText = document.getElementById('post-text');
+  const postsFeed = document.getElementById('posts-feed');
+
+  postBtn.addEventListener('click', () => {
+    const text = postText.value.trim();
+    if(text === '') {
+      alert('Please enter a message to post.');
+      return;
+    }
+    const postElement = document.createElement('div');
+    postElement.style.borderBottom = '1px solid #ddd';
+    postElement.style.padding = '10px 0';
+    postElement.innerHTML = `
+      <p style="margin:0;">${text}</p>
+      <small style="color:#555;">Posted just now</small>
+    `;
+    // Insert latest post at top
+    postsFeed.prepend(postElement);
+    // Clear textarea after posting
+    postText.value = '';
+  });
+</script>
+
+		
+
+        <!-- Login & Certification Section -->
+        <section id="login-certification" class="content-section">
+            <div class="section-header">
+                <h1 class="glow-text">👤 Login & Certification</h1>
+                <p>Access professional resources and earn free premium certifications in mental health</p>
+            </div>
+
+            <div class="login-cert-grid">
+                <!-- Login Form -->
+                <div class="card login-card">
+                    <div class="card__header">
+                        <h3>🔐 Professional Login</h3>
+                    </div>
+                    <div class="card__body">
+                        <form id="login-form" class="login-form">
+                            <div class="form-group">
+                                <label class="form-label">User Role</label>
+                                <select id="user-role" class="form-control" required style="color:black">
+                                    <option value="">Select your role...</option>
+                                    <option value="student">Student</option>
+									<option value="volunteer">Volunteer</option>
+                                    <option value="counsellor">Counsellor</option>
+                                    <option value="therapist">Therapist</option>
+                                    <option value="administrator">Administrator</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--full-width login-btn">Login</button>
+                            
+                            <p class="signup-link">
+                                Don't have an account? <a href="#" class="signup-trigger">Sign up here</a>
+                            </p>
+                        </form>
+                        
+                        <div id="login-message" class="login-message"></div>
+                    </div>
+                </div>
+
+                <!-- Free Certifications -->
+                <div class="card certifications-card">
+                    <div class="card__header">
+                        <h3>🏆 Free Premium Certifications</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="certification-list">
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <h4>🏥 Mental Health First Aid</h4>
+                                    <p>Learn to identify and respond to mental health crises with professional techniques</p>
+                                    <div class="cert-details">
+                                        <span class="cert-duration">📚 4 hours</span>
+                                        <span class="cert-level status status--info">Beginner</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn--outline cert-btn">Enroll Free</button>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <h4>🧠 CBT Fundamentals</h4>
+                                    <p>Master cognitive behavioral therapy techniques with advanced practice modules</p>
+                                    <div class="cert-details">
+                                        <span class="cert-duration">📚 6 hours</span>
+                                        <span class="cert-level status status--warning">Intermediate</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn--outline cert-btn">Enroll Free</button>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <h4>🧘 Mindfulness Practitioner</h4>
+                                    <p>Develop expertise in mindfulness and meditation practices with premium content</p>
+                                    <div class="cert-details">
+                                        <span class="cert-duration">📚 8 hours</span>
+                                        <span class="cert-level status status--success">Advanced</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn--outline cert-btn">Enroll Free</button>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <h4>🆘 Crisis Intervention Specialist</h4>
+                                    <p>Advanced skills for supporting people in crisis with professional protocols</p>
+                                    <div class="cert-details">
+                                        <span class="cert-duration">📚 10 hours</span>
+                                        <span class="cert-level status status--error">Expert</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn--outline cert-btn">Enroll Free</button>
+                            </div>
+                        </div>
+
+                        <div class="cert-actions">
+                            <button class="btn btn--primary browse-courses-btn">Browse All Free Courses</button>
+                            <button class="btn btn--secondary view-certificates-btn">View My Certificates</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="vr-ar-therapy" class="content-section">
+  <div class="section-header">
+    <h1 class="glow-text">🕶️ Immersive VR/AR Therapy</h1>
+    <p>Experience next-generation VR/AR mental health therapy and personalized calming 3D environments.</p>
+  </div>
+  <div class="vr-ar-grid">
+    <!-- VR Therapy Experience -->
+    <div class="card">
+      <div class="card__header">
+        <h3>🌄 Guided VR Therapy</h3>
+      </div>
+      <div class="card__body">
+        <p>
+          Step into immersive VR/AR therapy sessions designed to reduce stress, improve wellbeing, and build positive self-beliefs. Use supported devices for guided meditation, exposure therapy, and relaxation in virtual worlds.<br>
+          <strong>Works with Meta Quest, WebXR, and desktop browsers.</strong>
+        </p>
+        <button class="btn btn--primary" id="start-vr-therapy">Launch VR Therapy</button>
+        <div id="vr-status" class="vr-feedback"></div>
+      </div>
+    </div>
+    <!-- Personalized 3D Safe Space -->
+    <div class="card">
+      <div class="card__header">
+        <h3>🏕️ Mindful 3D Safe Space</h3>
+      </div>
+      <div class="card__body">
+        <p>
+          Design your own soothing environment. Choose scenes such as a forest, beach, or mountain lake. The app adapts lights, sounds, and visuals to your current mood for a personalized calming experience.
+        </p>
+        <!-- Simple 3D Scene Embed Example (WebXR using <model-viewer>) -->
+        <label for="scene-select">Select environment:</label>
+        <select id="scene-select" class="form-control">
+          <option value="forest">Forest</option>
+          <option value="beach">Beach</option>
+          <option value="mountain">Mountain Lake</option>
+        </select>
+        <!-- Placeholder for 3D or VR model (use <model-viewer> or WebXR compatible tag) -->
+        <div id="vr-3d-environment" class="safe-space-3d">
+          <!-- 3D viewer placeholder: replace with real model or VR component -->
+          <model-viewer id="env-viewer"
+            src="forest.glb"
+            ar ar-modes="webxr scene-viewer quick-look"
+            camera-controls
+            alt="Calming 3D Environment"
+            style="width: 100%; height: 300px; background:#f0f0f0;">
+          </model-viewer>
+        </div>
+        <button class="btn btn--primary" id="customize-space">Customize Environment</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="mood-music" class="content-section">
+  <div class="section-header">
+    <h1 class="glow-text">🎶 Mood Based Music</h1>
+    <p>Select your mood and listen to matching songs.</p>
+  </div>
+  <div class="music-recommendation">
+    <label for="mood-select">Choose your mood:</label>
+    <select id="mood-select" class="form-control">
+      <option value="happy">😊 Happy</option>
+      <option value="sad">😔 Sad</option>
+      <option value="stressed">😰 Stressed</option>
+      <option value="calm">😌 Calm</option>
+      <option value="energetic">💪 Energetic</option>
+    </select>
+    <button class="btn btn--primary" id="play-music-btn">Play Song</button>
+    <div id="music-player">
+      <audio id="mood-audio" controls></audio>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Map moods to audio file URLs (replace with real URLs or paths)
+  const moodSongs = {
+    happy: "https://example.com/songs/happy-song.mp3",
+    sad: "https://example.com/songs/sad-song.mp3",
+    stressed: "https://example.com/songs/stress-relief.mp3",
+    calm: "https://example.com/songs/calm-melody.mp3",
+    energetic: "https://example.com/songs/energetic-beat.mp3"
+  };
+
+  document.getElementById('play-music-btn').addEventListener('click', () => {
+    const selectedMood = document.getElementById('mood-select').value;
+    const audioPlayer = document.getElementById('mood-audio');
+    const songUrl = moodSongs[selectedMood] || "";
+    if (songUrl) {
+      audioPlayer.src = songUrl;
+      audioPlayer.play();
+    } else {
+      alert("No song available for this mood.");
+    }
+  });
+</script>
+<section id="face-detect" class="content-section">
+  <div class="section-header">
+    <h1 class="glow-text">📷 Facial Mood Detection</h1>
+    <p>Use your camera to detect your current mood.</p>
+  </div>
+  <div>
+    <video id="video" width="300" height="225" autoplay muted></video>
+    <button id="start-detection" class="btn btn--primary">Start Detection</button>
+    <p id="detected-mood" style="margin-top:10px; font-weight:bold;"></p>
+  </div>
+</section>
+
+<!-- Load face-api.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+
+<script>
+  const video = document.getElementById('video');
+  const detectedMood = document.getElementById('detected-mood');
+  const startButton = document.getElementById('start-detection');
+  let detectionInterval;
+
+  async function setupCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: {} });
+      video.srcObject = stream;
+    } catch (err) {
+      alert("Could not access camera: " + err);
+    }
+  }
+
+  async function startDetection() {
+    await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
+    await faceapi.nets.faceExpressionNet.loadFromUri('/models');
+
+    setupCamera();
+
+    detectionInterval = setInterval(async () => {
+      const detections = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
+      if (detections && detections.expressions) {
+        // Find highest probability expression
+        const expressions = detections.expressions;
+        const sorted = Object.entries(expressions).sort((a,b) => b[1]-a[1]);
+        const topEmotion = sorted[0][0];
+        detectedMood.textContent = `Detected Mood: ${topEmotion.charAt(0).toUpperCase() + topEmotion.slice(1)}`;
+      } else {
+        detectedMood.textContent = "No face detected";
+      }
+    }, 1000);
+  }
+
+  startButton.addEventListener('click', () => {
+    if (detectionInterval) clearInterval(detectionInterval);
+    startDetection();
+  });
+</script>
+<section id="local-events" class="content-section">
+  <div class="section-header">
+    <h1 class="glow-text">🗓️ Local Events & Workshops</h1>
+    <p>Discover and register for nearby wellness activities, yoga classes, and seminars.</p>
+  </div>
+  <div class="events-list">
+    <div class="event-card" style="border:1px solid #ddd; border-radius:8px; margin-bottom:15px; padding:16px;">
+      <h3 style="margin:0 0 4px;">Morning Yoga Session</h3>
+      <p><strong>Date:</strong> September 21, 2025</p>
+      <p><strong>Location:</strong> Green Park Community Center</p>
+      <p>Start your day with mindfulness and relaxation.</p>
+      <a href="#register-yoga" class="btn btn--primary">Register</a>
+    </div>
+    <div class="event-card" style="border:1px solid #ddd; border-radius:8px; margin-bottom:15px; padding:16px;">
+      <h3 style="margin:0 0 4px;">Mindfulness Workshop</h3>
+      <p><strong>Date:</strong> September 22, 2025</p>
+      <p><strong>Location:</strong> Downtown Wellness Hub</p>
+      <p>Learn meditation and stress management skills.</p>
+      <a href="#register-workshop" class="btn btn--primary">Register</a>
+    </div>
+    <div class="event-card" style="border:1px solid #ddd; border-radius:8px; margin-bottom:15px; padding:16px;">
+      <h3 style="margin:0 0 4px;">Mental Health Seminar</h3>
+      <p><strong>Date:</strong> September 25, 2025</p>
+      <p><strong>Location:</strong> Bright Future Hall</p>
+      <p>Expert talks on resilience and emotional wellbeing.</p>
+      <a href="#register-seminar" class="btn btn--primary">Register</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+    </main>
+
+    <!-- Notification System -->
+    <div id="notification" class="notification hidden">
+        <span id="notification-text"></span>
+        <button id="notification-close" class="notification-close">&times;</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
